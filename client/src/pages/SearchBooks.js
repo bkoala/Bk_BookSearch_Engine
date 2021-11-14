@@ -10,13 +10,13 @@ import { useMutation } from "@apollo/client";
 import { ADD_BOOK } from "../utils/mutations";
 
 const SearchBooks = () => {
-    // create state for holding returned google api data
+    // Hold returned google api data
     const [searchedBooks, setSearchedBooks] = useState([]);
-    // create state for holding our search field data
+    // State for holding our search field input data
     const [searchInput, setSearchInput] = useState("");
-
+   //Use mutation to add book
     const [addBook] = useMutation(ADD_BOOK);
-    // create state to hold saved bookId values
+    // Holds saved bookId values
     const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
     // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
@@ -28,7 +28,7 @@ const SearchBooks = () => {
     // create method to search for books and set state on form submit
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+       //No input in Search
         if (!searchInput) {
             return false;
         }
@@ -57,7 +57,7 @@ const SearchBooks = () => {
         }
     };
 
-    // create function to handle saving a book to the database
+    // Function to handle saving a book to the database
     const handleSaveBook = async (bookId) => {
         // find the book in `searchedBooks` state by the matching id
         const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
@@ -67,7 +67,7 @@ const SearchBooks = () => {
         if (!token) {
             return false;
         }
-        //STILL NEED TO GET USER ID!!!!!!!!!!!!!!!!!!
+        //Add book with associated user Id
         try {
             await addBook({
                 variables: {
@@ -81,7 +81,7 @@ const SearchBooks = () => {
                 },
             });
 
-            // if book successfully saves to user's account, save book id to state
+            // if book saved to user's account, save the book id to state
             setSavedBookIds([...savedBookIds, bookToSave.bookId]);
         } catch (err) {
             console.error(err);
