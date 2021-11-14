@@ -19,7 +19,7 @@ The login form allows a user to login using his email and password.
 
 ### Various links showing various application pages
 
-Herokup deployed URL :
+Heroku deployed URL : https://tranquil-ravine-31859.herokuapp.com/
 
 Application Page Link :https://bkoala.github.io/BertinK_portofolio/
 
