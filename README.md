@@ -19,9 +19,9 @@ The login form allows a user to login using his email and password.
 
 ### Various links showing various application pages
 
-Heroku deployed URL : https://tranquil-ravine-31859.herokuapp.com/
+Heroku deployed URL: https://tranquil-ravine-31859.herokuapp.com/
 
-Application Page Link :https://bkoala.github.io/BertinK_portofolio/
+Application GitHub URL : https://github.com/bkoala/Bk_BookSearch_Engine
 
 Home Page Screen Shot : ![Screenshot](./images/home.png)
 Saved Books Screen Shot : ![Screenshot](./images/saveB.png)
